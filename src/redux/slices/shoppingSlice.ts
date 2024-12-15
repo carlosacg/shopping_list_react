@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit';
+
 
 interface ShoppingItem {
   id: string;
@@ -13,8 +14,20 @@ interface ShoppingState {
   filter: string;
 }
 
+
+// Function for loading the initial state from Local Storage
+const loadStateFromLocalStorage = (): ShoppingItem[] => {
+  try {
+    const serializedState = localStorage.getItem('shoppingItems');
+    return serializedState ? JSON.parse(serializedState) : [];
+  } catch (error) {
+    console.error('Error loading state from Local Storage:', error);
+    return [];
+  }
+};
+
 const initialState: ShoppingState = {
-  items: [],
+  items: loadStateFromLocalStorage(),
   filter: 'all',
 };
 
