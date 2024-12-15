@@ -1,12 +1,11 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { removeItem, togglePurchased } from '../redux/slices/shoppingSlice';
+import ShoppingItem from './ShoppingItem';
 import styles from '../styles/ShoppingList.module.css';
 
 const ShoppingList = () => {
   const items = useSelector((state: RootState) => state.shopping.items);
   const filter = useSelector((state: RootState) => state.shopping.filter);
-  const dispatch = useDispatch();
 
   const filteredItems =
     filter === 'all' ? items : items.filter((item) => item.category === filter);
@@ -14,20 +13,13 @@ const ShoppingList = () => {
   return (
     <ul className={styles.shoppingList}>
       {filteredItems.map((item) => (
-        <li key={item.id} className={styles.item}>
-          <span
-            className={item.purchased ? styles.purchased : ''}
-            onClick={() => dispatch(togglePurchased(item.id))}
-          >
-            {item.name} ({item.category})
-          </span>
-          <button
-            className={styles.button}
-            onClick={() => dispatch(removeItem(item.id))}
-          >
-            Remove
-          </button>
-        </li>
+        <ShoppingItem
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          category={item.category}
+          purchased={item.purchased}
+        />
       ))}
     </ul>
   );
