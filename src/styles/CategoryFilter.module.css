@@ -1,0 +1,32 @@
+.filterContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .active {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border-color: #4caf50;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
