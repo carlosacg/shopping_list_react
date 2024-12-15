@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addItem } from '../redux/slices/shoppingSlice';
-import { v4 as uuidv4 } from 'uuid';
-import styles from '../styles/ShoppingForm.module.css';
-import { useTheme } from '../context/ThemeContext';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/slices/shoppingSlice";
+import { v4 as uuidv4 } from "uuid";
+import styles from "../styles/ShoppingForm.module.css";
+import { useTheme } from "../context/ThemeContext";
 
 const ShoppingForm = () => {
-  const [name, setName] = useState('');
-  const [category, setCategory] = useState('');
+  const [name, setName] = useState("");
+  const [category, setCategory] = useState("");
   const dispatch = useDispatch();
   const { theme } = useTheme();
 
@@ -15,8 +15,8 @@ const ShoppingForm = () => {
     e.preventDefault();
     if (name && category) {
       dispatch(addItem({ id: uuidv4(), name, category, purchased: false }));
-      setName('');
-      setCategory('');
+      setName("");
+      setCategory("");
     }
   };
 
@@ -39,7 +39,9 @@ const ShoppingForm = () => {
         <option value="Vegetables">Vegetables</option>
         <option value="Dairy">Dairy</option>
       </select>
-      <button type="submit" className={styles.button}>Add Item</button>
+      <button type="submit" className={styles.button}>
+        Add Item
+      </button>
     </form>
   );
 };

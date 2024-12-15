@@ -1,33 +1,32 @@
 .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .item:hover {
-    background-color: #f4f4f4;
-  }
-  
-  .purchased {
-    text-decoration: line-through;
-    color: gray;
-  }
-  
-  .button {
-    padding: 5px 10px;
-    border: none;
-    background-color: #dc3545;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #c82333;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.item:hover {
+  background-color: #f4f4f4;
+}
+
+.purchased {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #c82333;
+}
