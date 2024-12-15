@@ -6,12 +6,6 @@ import CategoryFilter from './components/CategoryFilter';
 
 
 function App() {
-  const [selectedFilter, setSelectedFilter] = useState<string>('all');
-
-  const handleFilterChange = (category: string) => {
-    setSelectedFilter(category);
-  };
-
   return (
     <div className={styles.app}>
       <header className={styles.header}>
@@ -19,7 +13,7 @@ function App() {
       </header>
       <main className={styles.main}>
         <ShoppingForm />
-        <CategoryFilter onFilterChange={handleFilterChange} selectedFilter={selectedFilter} />
+        <CategoryFilter/>
         <ShoppingList />
       </main>
     </div>
