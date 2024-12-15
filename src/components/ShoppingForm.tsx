@@ -3,11 +3,13 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/slices/shoppingSlice';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../styles/ShoppingForm.module.css';
+import { useTheme } from '../context/ThemeContext';
 
 const ShoppingForm = () => {
   const [name, setName] = useState('');
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
+  const { theme } = useTheme();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ const ShoppingForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form onSubmit={handleSubmit} className={`${styles.form} theme-${theme}`}>
       <input
         type="text"
         placeholder="Product Name"
