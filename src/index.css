@@ -1,7 +1,9 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .theme-light {
@@ -20,7 +22,9 @@ button {
   padding: 10px 15px;
   border-radius: 4px;
   font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 button:hover {
